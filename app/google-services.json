@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718522871086",
+    "project_id": "coins-37b98",
+    "storage_bucket": "coins-37b98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718522871086:android:d6ca42f1fbe4820d015ebf",
+        "android_client_info": {
+          "package_name": "com.hamoda.coins"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718522871086-sr78kskjem693hn4kj508gj8p7t1o84l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnnJpNE8KWdFkNWAtbU9hmOZhOMmldlX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718522871086-sr78kskjem693hn4kj508gj8p7t1o84l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
