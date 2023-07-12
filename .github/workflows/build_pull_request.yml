@@ -7,11 +7,11 @@ jobs:
     name: Assemble
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout@v2
-        uses: actions/checkout@v2
+      - name: Checkout@main
+        uses: actions/checkout@main
 
-#      - name: Init JDK
-#        uses: ./.github/actions/job/setup-jdk
+      - name: Init JDK
+        uses: ./.github/actions/job/setup-jdk
 
       - name: Init cache
         uses: ./.github/actions/job/setup-cache
