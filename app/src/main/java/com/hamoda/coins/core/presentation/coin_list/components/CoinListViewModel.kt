@@ -13,6 +13,7 @@ class CoinListViewModel(
 ) : ViewModel() {
 
     private val _state = mutableStateOf(CoinListState())
+
     val state: State<CoinListState> = _state
 
     init {
