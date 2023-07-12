@@ -23,6 +23,7 @@ class CoinListViewModel(
 
     private suspend fun getCoins() {
         val result = getCoinsUseCase.invoke()
+
         _state.value = _state.value.copy(coins = result)
     }
 }
