@@ -10,15 +10,23 @@ jobs:
       - name: Checkout@v2
         uses: actions/checkout@v2
 
-      - name: Restore Cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+      - name: Init JDK
+        uses: ./.github/actions/job/setup-jdk
 
-      - name: Assemble Debug
-        run: ./gradlew assembleDebug
+      - name: Init cache
+        uses: ./.github/actions/job/setup-cache
+
+      - name: Kotlin lint
+        uses: ./.github/actions/gradle/ktlint
+        with:
+          shell: ${{ env.shell }}
+
+      - name: Unit tests
+        uses: ./.github/actions/gradle/unit-tests
+        with:
+          shell: ${{ env.shell }}
+
+      - name: All checks
+        uses: ./.github/actions/gradle/check
+        with:
+          shell: ${{ env.shell }}

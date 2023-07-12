@@ -1,0 +1,17 @@
+name: "Assemble apk"
+description: "Assemble apk"
+inputs:
+  shell:
+    required: true
+    description: "Shell to use depending on runner os"
+  assembleVariant:
+    required: false
+    description: "Assemble variant"
+    default: "Debug"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Assemble
+      run: ./gradlew assemble${{ inputs.assembleVariant }} --stacktrace
+      shell: ${{ inputs.shell }}
