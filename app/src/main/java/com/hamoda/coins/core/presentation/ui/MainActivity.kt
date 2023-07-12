@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.hamoda.coins.core.presentation.theme.CoinsTheme
 import com.plcoding.cryptocurrencyappyt.presentation.coin_list.CoinListScreen
-import com.plcoding.cryptocurrencyappyt.presentation.coin_list.CoinListViewModel
+import com.hamoda.coins.core.presentation.coin_list.components.CoinListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
