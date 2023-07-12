@@ -1,9 +1,10 @@
-package com.plcoding.cryptocurrencyappyt.presentation.coin_list
+package com.hamoda.coins.core.presentation.coin_list.components
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.hamoda.coins.core.domain.use_case.get_coins.GetCoinsUseCase
+import com.plcoding.cryptocurrencyappyt.presentation.coin_list.CoinListState
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
