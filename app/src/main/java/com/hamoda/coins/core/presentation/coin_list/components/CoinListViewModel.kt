@@ -15,6 +15,7 @@ class CoinListViewModel(
     private val _state = mutableStateOf(CoinListState())
     val state: State<CoinListState> = _state
 
+    //test git hup action
     init {
         MainScope().launch {
             getCoins()
