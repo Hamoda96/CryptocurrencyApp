@@ -29,12 +29,11 @@ jobs:
 
       - name: Kotlin lint
         run: ./gradlew ktlintCheck --stacktrace
-        shell: ${{ inputs.shell }}
+
 
       - name: Unit tests
         run: ./gradlew test --stacktrace
-        shell: ${{ inputs.shell }}
+
 
       - name: Gradle checks
         run: ./gradlew check --stacktrace
-        shell: ${{ inputs.shell }}
