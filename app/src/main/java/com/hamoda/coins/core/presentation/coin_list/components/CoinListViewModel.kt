@@ -15,15 +15,14 @@ class CoinListViewModel(
     private val _state = mutableStateOf(CoinListState())
 
     val state: State<CoinListState> = _state
-
     init {
         MainScope().launch {
             getCoins()
         }
     }
-
     private suspend fun getCoins() {
         val result = getCoinsUseCase.invoke()
+
         _state.value = _state.value.copy(coins = result)
     }
 }
