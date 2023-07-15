@@ -15,7 +15,7 @@ class CoinListViewModel(
     private val _state = mutableStateOf(CoinListState())
 
     val state: State<CoinListState> = _state
-   // test 6
+   // test 7
     init {
         MainScope().launch {
             getCoins()
