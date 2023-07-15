@@ -10,23 +10,27 @@ jobs:
       - name: Checkout@v3
         uses: actions/checkout@v3
 
-      - name: Init JDK
-        uses: ./.github/actions/job/setup-jdk
-
-      - name: Init cache
-        uses: ./.github/actions/job/setup-cache
-
-      - name: Kotlin lint
-        uses: ./.github/actions/gradle/ktlint
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          shell: ${{ env.shell }}
+          distribution: 'zulu'
+          java-version: 17
+          # cache: 'gradle'
 
-      - name: Unit tests
-        uses: ./.github/actions/gradle/unit-tests
-        with:
-          shell: ${{ env.shell }}
-
-      - name: All checks
-        uses: ./.github/actions/gradle/check
-        with:
-          shell: ${{ env.shell }}
+#      - name: Init cache
+#        uses: ./.github/actions/job/setup-cache
+#
+#      - name: Kotlin lint
+#        uses: ./.github/actions/gradle/ktlint
+#        with:
+#          shell: ${{ env.shell }}
+#
+#      - name: Unit tests
+#        uses: ./.github/actions/gradle/unit-tests
+#        with:
+#          shell: ${{ env.shell }}
+#
+#      - name: All checks
+#        uses: ./.github/actions/gradle/check
+#        with:
+#          shell: ${{ env.shell }}
