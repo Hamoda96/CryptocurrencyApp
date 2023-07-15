@@ -17,20 +17,24 @@ jobs:
           java-version: 17
           # cache: 'gradle'
 
-#      - name: Init cache
-#        uses: ./.github/actions/job/setup-cache
-#
-#      - name: Kotlin lint
-#        uses: ./.github/actions/gradle/ktlint
-#        with:
-#          shell: ${{ env.shell }}
-#
-#      - name: Unit tests
-#        uses: ./.github/actions/gradle/unit-tests
-#        with:
-#          shell: ${{ env.shell }}
-#
-#      - name: All checks
-#        uses: ./.github/actions/gradle/check
-#        with:
-#          shell: ${{ env.shell }}
+      - name: Setup cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.konan
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+
+      - name: Kotlin lint
+        run: ./gradlew ktlintCheck --stacktrace
+        shell: ${{ inputs.shell }}
+
+      - name: Unit tests
+        run: ./gradlew test --stacktrace
+        shell: ${{ inputs.shell }}
+
+      - name: Gradle checks
+        run: ./gradlew check --stacktrace
+        shell: ${{ inputs.shell }}
