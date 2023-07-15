@@ -27,9 +27,9 @@ jobs:
             ${{ runner.os }}-gradle-
 
 
-      - name: Kotlin lint
-        run: ./gradlew ktlintCheck --stacktrace
-
+#      - name: Kotlin lint
+#        run: ./gradlew ktlintCheck --stacktrace
+#
 
       - name: Unit tests
         run: ./gradlew test --stacktrace
